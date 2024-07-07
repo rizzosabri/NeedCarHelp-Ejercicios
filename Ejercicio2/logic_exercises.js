@@ -67,6 +67,16 @@ function prime_numbers(n) {
 
 }
 
+function bubble_sort(unOrderedList) {
 
+    function comparar(a, b) {
+        return a - b;
+    }
+
+    let OrderedList = unOrderedList.sort(comparar);
+    return OrderedList
+
+
+}
 
 
