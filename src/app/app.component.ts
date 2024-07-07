@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'toDoList-app';
 
   tasks: string[] = [];
-    
+
   constructor() {
     this.loadTasks();
   }
@@ -25,15 +25,15 @@ export class AppComponent {
     this.saveAllTasks()
   }
 
-  saveAllTasks(){
+  saveAllTasks() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
 
   }
 
   loadTasks() {
     const tasks = localStorage.getItem('tasks');
-    this.tasks=  tasks ? JSON.parse(tasks) : [];
-   
+    this.tasks = tasks ? JSON.parse(tasks) : [];
+
   }
 
 }
