@@ -14,4 +14,8 @@ export class AppComponent {
   title = 'toDoList-app';
 
   tasks: string[] = [];
+
+  addTask(task: string) {
+    this.tasks.push(task);
+  }
 }
