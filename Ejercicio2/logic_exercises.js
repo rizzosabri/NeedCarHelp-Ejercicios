@@ -80,3 +80,23 @@ function bubble_sort(unOrderedList) {
 }
 
 
+function binary_search(sortedList, element) {
+    let left = 0;
+    let right = sortedList.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+       
+        if (sortedList[mid] === element) {
+            return mid;  // se encuentra en la mitad de la lista
+        } else if (sortedList[mid] < element) {
+            left = mid + 1; // Buscar en la mitad derecha
+        } else {
+            right = mid - 1; // Buscar en la mitad izquierda
+        }
+    }
+
+    return -1; // no se encuentra
+
+
+}
