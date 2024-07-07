@@ -17,5 +17,11 @@ export class AppComponent {
 
   addTask(task: string) {
     this.tasks.push(task);
+    this.saveAllTasks()
+  }
+
+  saveAllTasks(){
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+
   }
 }
