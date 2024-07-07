@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -11,12 +11,15 @@ import { CommonModule } from '@angular/common';
 })
 export class ListComponent {
   @Input() tasks: string[] = [];
+  @Output() tasksCleared: EventEmitter<void> = new EventEmitter<void>();
 
   deleteList() {
-    alert("Deseas Eliminar todas las Tareas?")
-    this.tasks = [];
-    localStorage.clear()
+    const confirmed = confirm("Deseas eliminar todas las tareas?");
+    if (confirmed) {
+      this.tasks = [];
+      localStorage.clear();
+      this.tasksCleared.emit(); // Emitir evento
+    }
 
-  }
-
+}
 }

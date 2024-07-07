@@ -35,5 +35,8 @@ export class AppComponent {
     this.tasks = tasks ? JSON.parse(tasks) : [];
 
   }
+   onTasksCleared() {
+    this.tasks = [];
+  }
 
 }

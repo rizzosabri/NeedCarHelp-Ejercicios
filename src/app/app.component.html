@@ -1,5 +1,5 @@
 <div class="todoList">
   <app-form (newTask)="addTask($event)"></app-form>
 
-  <app-list [tasks]="tasks"></app-list>
+  <app-list [tasks]="tasks" (tasksCleared)="onTasksCleared()"></app-list>
 </div>
