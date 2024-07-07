@@ -14,6 +14,11 @@ export class AppComponent {
   title = 'toDoList-app';
 
   tasks: string[] = [];
+    
+  constructor() {
+    this.loadTasks();
+  }
+
 
   addTask(task: string) {
     this.tasks.push(task);
@@ -24,4 +29,11 @@ export class AppComponent {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
 
   }
+
+  loadTasks() {
+    const tasks = localStorage.getItem('tasks');
+    this.tasks=  tasks ? JSON.parse(tasks) : [];
+   
+  }
+
 }
