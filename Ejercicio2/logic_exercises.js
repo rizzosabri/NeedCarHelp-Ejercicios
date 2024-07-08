@@ -2,8 +2,7 @@
 
 function fibonacci(n) {
 
-    let fibonacciArray = [];
-    fibonacciArray.push(0, n)
+    let fibonacciArray = [0,1];
 
     for (let i = 1; i <= n - 2; i++) {
         fibonacciArray.push(fibonacciArray[i - 1] + fibonacciArray[i])
